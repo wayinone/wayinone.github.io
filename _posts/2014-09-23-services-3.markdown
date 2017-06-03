@@ -2,7 +2,7 @@
 layout: default
 img: line_model on Spiral 20 NN 1.5 shrinkage.png
 category: Services
-title: Data Visualization\Dimension reduction
+title: Data Visualization\Dimension Reduction
 description: |
 ---
   We have an simple algorithm to achieve data visualization/dimension reduction: 
