@@ -6,7 +6,7 @@ title: Toward the Minimum Compression Rate
 description: |
 ---
   We developed a lossless image compression algorithm that have
-  analytic guarantee: when context size is getting bigger, we will
+  analytic guarantee. When context size is getting bigger, our algorithm will
   reach the optimal compression rate. 
   We actually don't need a lot of context size to outperform CALIC 
-  algorithm, as our figure suggest.
+  algorithm, one of the best scheme so far.
