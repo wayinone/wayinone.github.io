@@ -4,7 +4,7 @@ title: Wei-Ying Wang Ph.D.
 permalink: /Resume
 ---
 
-# Wei-Ying's CV
+# CV of Wei-Ying Wang Ph.D.
 ---
 
 * [PDF version](/assets/WeiyingWang_CV.pdf).
@@ -12,7 +12,7 @@ permalink: /Resume
 
 ---
 ## Summary ##
-* Seeking a *data* _scientist_ position in which I would contribute to the success of a business 
+* Seeking a data scientist position in which I would contribute to the success of a business 
 * Applied Mathematics Ph.D. with 10+ years experience in programming
 * Specialized in data classification and statistical image analysis
 * Analyzing large data to develop an image compression algorithm that achieves the best compression rate
@@ -54,7 +54,7 @@ permalink: /Resume
 	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)	
 	
 
-  * W.-Y. Wangand S. Geman, ``Robust Generalized Clustering.''  In progress.
+  * W.-Y. Wang and S. Geman, ``Robust Generalized Clustering.''  In progress.
 	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% of corrupted) 
 	* Approximating an NP-hard problem with a modified backward selection procedure
 	* Implemented in C and Python (by ctypes module)
@@ -97,7 +97,7 @@ permalink: /Resume
     *  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
 	
 ---
-# Employment
+## Employment
   * Military Service, Taiwan, 2007 - 2008: Coastal Patrol Corporal
   
 --- 
