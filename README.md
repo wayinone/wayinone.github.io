@@ -22,11 +22,16 @@ The description of this service
  - First you should clone all the repository to the local folder.
  - In powershell, go to the folder and type
  ```txt
- ---
  jekyll serve
- ---
  ```
- - Then go to your browers and type: http://localhost:4000/
+ - Then go to your browers and go to: http://localhost:4000/
+ - Every time you make change in the local repository, the jekyll server will update the code and the local webpage will display your work.
+ - Keey an eye on powershell since sometime there is bug and you wont see any change in the site.
+ - If the website is not updating and no error message, just delete the `/_site` folder, and build again by: (remember to ctrl+C to end the current session.
+ ```txt
+ jekyll serve
+ ```
+ 
 
 
 ## License
