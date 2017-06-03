@@ -1,8 +1,12 @@
 ---
 layout: default
-img: phones.png
+img: line_model on Spiral 20 NN 1.5 shrinkage.png
 category: Services
 title: Google Web Fonts and<br>Font Awesome Icons
 description: |
 ---
-This template features the 'Lato' font, part of the [Google Web Font library](http://www.google.com/fonts), as well as [icons from Font Awesome](http://fontawesome.io).
+  We have an simple algorithm to achieve data visualization/dimension reduction: 
+  The left figure is the original data point, they are roughly following a spiral structure.
+  In the right figure, we summarize it as one dimensional feature, (note the colors of the points
+  corresponds to the colors in the original data in the left figure)
+  determined by its relation to nearby points in the more aligned structure (right figure)

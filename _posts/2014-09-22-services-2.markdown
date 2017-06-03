@@ -1,10 +1,14 @@
 ---
 layout: default
-img: dog.png
+img: cor_triangle_with_original.png
 category: Services
 title: 3D Device Mockups<br>by PSDCovers
 description: |
 ---
-  Turn your 2D designs into high quality, 3D
-  product shots in seconds using free Photoshop actions by [PSDCovers](http://www.psdcovers.com/)! Visit
-  their website to download some of their awesome, free photoshop actions!
+   The minimizer to the loss function of K-means finds reference points 
+   to summarize data (unsupervisedly), we generalized it to find 
+   "linear structures" (like lines in the left figure) to summarize data. 
+   However, direct generalizing the idea of K-means algorithm is NOT working.
+   Instead, we characterize a property of the minimizer of the loss function 
+   (which is already NP hard for K-means) and found an algorithm that approximate it really well.
+
