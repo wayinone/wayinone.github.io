@@ -7,7 +7,7 @@ permalink: /Resume
 # CV of Wei-Ying Wang Ph.D.
 ---
 
-* [PDF version](/assets/WeiyingWang_CV.pdf).
+* [PDF version](/assets/WeiyingWang_CV.pdf)
 
 
 ---
