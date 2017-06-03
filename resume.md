@@ -1,6 +1,8 @@
 ---
-layout: page
+
+layout: null
 title: Resume
+
 ---
 # Wei-Ying Wang Ph.D. 
 * [PDF version](/assets/WeiyingWang_CV.pdf).
