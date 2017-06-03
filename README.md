@@ -18,6 +18,7 @@ The description of this service
  - Note that the file name of each post is "YYYY-MM-DD-..." 
 
 ## Using jekyll server to speed up the build
+ - First, you need to be sure that jekyll works on your machine. I have to install ruby and some other things for it to work.
  - I am using Windows, so I used powershell to type the command.
  - First you should clone all the repository to the local folder.
  - In powershell, go to the folder and type
