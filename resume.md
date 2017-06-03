@@ -1,15 +1,12 @@
 ---
-
-layout: page
-title: Resume
-
+layout: default2
+title: Wei-Ying Wang Ph.D. 
+permalink: /Resume
 ---
-# Wei-Ying Wang Ph.D. 
 * [PDF version](/assets/WeiyingWang_CV.pdf).
 
-
 ## Summary
-* I am seeking a position in which I would contribute to the success of a business by the application of advanced data science to its products, transactions and processes.
+* I am seeking a position in which I would contribute to the success of a business by the application of advanced data science to its products, transactions and processes
 * Seeking a data scientist position in which I would contribute to the success of a business 
 * Applied Mathematics Ph.D. with 10+ years experience in programming
 * Specialized in data classification and statistical image analysis
@@ -30,15 +27,15 @@ title: Resume
   
 ## Education
 
-* Brown University, Providence, RI. Sep 2010 - May 2017
+* Brown University, Providence, RI. 2010 - 17
   * Ph.D. Applied Mathematics
   * Dissertation: Image Compression and Data Clustering: New Takes on Some Old Problems
   * Advisor: Stuart Geman
 	
-* National Taiwan University, Taiwan. Sep 2005 - Aug 2006
+* National Taiwan University, Taiwan. 2005 - 06
   * M.Sc. Mathematics/Track of Statistics
   * Advisor Ming-Yen Cheng
-* National Taiwan University, Taiwan.  Sep 2000 - Mar 2004
+* National Taiwan University, Taiwan.  2000 - 04
   * B.A. Economics
   
 
