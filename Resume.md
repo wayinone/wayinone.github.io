@@ -3,16 +3,21 @@ layout: default2
 title: Wei-Ying Wang Ph.D. 
 permalink: /Resume
 ---
+
 # Wei-Ying's CV
+---
+
 * [PDF version](/assets/WeiyingWang_CV.pdf).
 
+
+---
 ## Summary ##
-* I am seeking a position in which I would contribute to the success of a business by the application of advanced data science to its products, transactions and processes
-* Seeking a data scientist position in which I would contribute to the success of a business 
+* Seeking a *data* _scientist_ position in which I would contribute to the success of a business 
 * Applied Mathematics Ph.D. with 10+ years experience in programming
 * Specialized in data classification and statistical image analysis
 * Analyzing large data to develop an image compression algorithm that achieves the best compression rate
 
+---
 ## Technical Skills
 * Statistics
   * Mathematical statistics, regression, Baysian analysis, MCMC, information theory
@@ -22,10 +27,11 @@ permalink: /Resume
   * Compression, denoising, 3D reconstruction, pattern recognition		  
 * Programming	
   * Proficient with: Python, Matlab,  Latex
-  * Experienced with: C/C++(Eclipse), Amazon EC2, R, CUDA
+  * Experienced with: C/C++ (Eclipse), Amazon EC2, R, CUDA
 * System
   * Windows, Linux
-  
+
+---
 ## Education
 
 * Brown University, Providence, RI. 2010 - 17
@@ -38,7 +44,9 @@ permalink: /Resume
   * Advisor Ming-Yen Cheng
 * National Taiwan University, Taiwan.  2000 - 04
   * B.A. Economics
- 
+  
+
+--- 
 ## Papers
   * W.-Y. Wang and S. Geman, ``Comparison Based Image Compression.'' In progress. 		
 	* A novel lossless image compression scheme with analytic performance guarantees 
@@ -50,8 +58,9 @@ permalink: /Resume
 	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% of corrupted) 
 	* Approximating an NP-hard problem with a modified backward selection procedure
 	* Implemented in C and Python (by ctypes module)
-		
-		
+	
+	
+---
 ## Projects ##
 
   * Clustering to Shapes
@@ -75,6 +84,7 @@ permalink: /Resume
 	* Generalizing kernel density estimation on non-homogeneous Poisson process to analyze aftershocks data
 	* Reducing the bias of misspecified model without boundary effect
 	
+---	
 ## Academic Experience
   * Brown university, 2016: Teaching Assistant on: Probabilities in Quantum Mechanics
     *  Topics: tensor representation, observable, entanglement, and quantum teleportation 
@@ -85,10 +95,12 @@ permalink: /Resume
   * Academia Sinica, Institute of Mathematics, Taiwan, 2008 - 2010: Research Assistant
     *  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
     *  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
-
+	
+---
 # Employment
   * Military Service, Taiwan, 2007 - 2008: Coastal Patrol Corporal
   
+--- 
 ## Honors and Awards
   * Sigma Xi National Nomination, Brown University, 2016-2017
   * University Fellowship, Brown University, 2010-2017
