@@ -1,8 +1,12 @@
 ---
 layout: default
-img: ipad.png
+img: CompareWithCALIC.png
 category: Services
-title: Death to the Stock Photo:<br>Special Thanks
+title: The Best Compression Scheme:<br>CBIC
 description: |
 ---
-  A special thanks to [Death to the Stock Photo](http://join.deathtothestockphoto.com/) for providing the photographs that you see in this template.  Visit their website to become a member!
+	We developed a lossless image compression algorithm that have
+	analytic guarantee: when context size is getting bigger, we will
+	reach the optimal compression rate. 
+	We actually don't need a lot of context size to outperform CALIC 
+	algorithm, as our figure suggest.
