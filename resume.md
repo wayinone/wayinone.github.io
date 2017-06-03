@@ -5,7 +5,7 @@ permalink: /Resume
 ---
 * [PDF version](/assets/WeiyingWang_CV.pdf).
 
-## Summary
+## Summary ##
 * I am seeking a position in which I would contribute to the success of a business by the application of advanced data science to its products, transactions and processes
 * Seeking a data scientist position in which I would contribute to the success of a business 
 * Applied Mathematics Ph.D. with 10+ years experience in programming
