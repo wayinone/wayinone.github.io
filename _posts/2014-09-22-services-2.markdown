@@ -2,7 +2,7 @@
 layout: default
 img: cor_triangle_with_original.png
 category: Services
-title: 3D Device Mockups<br>by PSDCovers
+title: Prototype Learning: Generalized K-means
 description: |
 ---
    The minimizer to the loss function of K-means finds reference points 
