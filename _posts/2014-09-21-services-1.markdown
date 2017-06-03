@@ -1,12 +1,12 @@
 ---
 layout: default
-img: CompareWithCALIC.png
+img: lena_gray_512_jls_4_23.bmp
 category: Services
-title: The Best Compression Scheme:<br>CBIC
+title: Toward the Minimum Compression Rate
 description: |
 ---
-	We developed a lossless image compression algorithm that have
-	analytic guarantee: when context size is getting bigger, we will
-	reach the optimal compression rate. 
-	We actually don't need a lot of context size to outperform CALIC 
-	algorithm, as our figure suggest.
+  We developed a lossless image compression algorithm that have
+  analytic guarantee: when context size is getting bigger, we will
+  reach the optimal compression rate. 
+  We actually don't need a lot of context size to outperform CALIC 
+  algorithm, as our figure suggest.
