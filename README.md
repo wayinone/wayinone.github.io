@@ -17,6 +17,13 @@ The description of this service
 ```
  - Note that the file name of each post is "YYYY-MM-DD-..." 
 
+## Change the font css file	
+ - To change the font of your own .md file (e.g. Resume.md, and I am NOT talking about anything in the front page), you need to change css file: Go to "/css/mycss.css" to edit them.
+ - Since 
+ 1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
+ 2. default2 will quote "header2.html" (also in folder:"/_include"
+ 3. header2.html will quote "mycss.css" 
+
 ## Using jekyll server to speed up the build
  - First, you need to be sure that jekyll works on your machine. I have to install ruby and some other things for it to work.
  - I am using Windows, so I used powershell to type the command.

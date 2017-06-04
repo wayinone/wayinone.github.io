@@ -5,7 +5,7 @@ permalink: /PSA
 ---
 # New Tool for Data Visualization/Dimension reduction
 ---
-Wei-Ying Wang and Stuart Geman, 2017
+#### Wei-Ying Wang and Stuart Geman, 2017
 
 Stu and I developed a very simple and effective algorithm, called PSA, the Prediction Shift Algorithm. The algorithm combines mean-shift and PCA idea. In particular, we can adjust a parameter to achieve either data visualization or dimension reduction.
 
