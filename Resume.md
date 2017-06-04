@@ -48,24 +48,24 @@ permalink: /Resume
 
 --- 
 ## Papers
-  * W.-Y. Wang and S. Geman, ``Comparison Based Image Compression.'' In progress. 		
+  * W.-Y. Wang and S. Geman, [Comparison Based Image Compression.](/CBIC) In progress. 		
 	* A novel lossless image compression scheme with analytic performance guarantees 
 	* Outperforming state-of-the-art algorithms in bit-per-pixel results
 	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)	
 	
 
-  * W.-Y. Wang and S. Geman, ``Robust Generalized Clustering.''  In progress.
+  * W.-Y. Wang and S. Geman, [Robust Generalized Clustering.](/RRA)  In progress.
 	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% of corrupted) 
 	* Approximating an NP-hard problem with a modified backward selection procedure
 	* Implemented in C and Python (by ctypes module)
 	
+  * W.-Y. Wang and S. Geman, [Clustering to Shapes.](/PSA)  In progress.
+	* An iterative PCA method for clustering high dimensional data into descriptive manifolds
+	* A novel dimension reduction tool, capable of obtaining complicated structures, like spiral-shaped data, in a short amount of time	
+	
 	
 ---
 ## Projects ##
-
-  * Clustering to Shapes
-	* An iterative PCA method for clustering high dimensional data into descriptive manifolds
-	* Capable of obtaining complicated structures, like spiral-shaped data, in a short amount of time
 	
   * Improving 3D Stereo Data with Markov Random Field
 	*  Reduce the mismatching problem when reconstructing 3D images from stereo data
