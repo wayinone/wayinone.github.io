@@ -32,8 +32,11 @@ The description of this service
  ```txt
  jekyll serve
  ```
- 
-
+## Using Notepad++
+ - Note that you want to install 32bit version since it includes Plugin Manager (So that you have spell checker.)
+ - After install, open Notepad++, then go to "Plugin->Plugin Manager", install spell checker and Dspell checker. (you will be prompt to install Aspell dictionary.) Practically, open "Plugin->Dspell" and choose the option of auto detect, and use Aspell dictionary.
+ - If you want to change theme: go to "Settings-> style configurator -> select theme."
+ - To easily edit web content, download style file (.xml) from [here](https://github.com/Edditoria/markdown-plus-plus), and go to "Language-> Define your language -> import" to import the xml file. I love to use "Blackboard Style"
 
 ## License
 The contents of this repository are licensed under the [Apache
