@@ -3,9 +3,11 @@ layout: default2
 title: RRA
 permalink: /RRA
 ---
+
 # Prototype Learning: Generalized K-means
 ---
-Wei-Ying Wang and Stuart Geman, 2017
+
+#### Wei-Ying Wang and Stuart Geman, 2017
 
 How to learn the inherent structures of data (unsupervisedly)? Our algorithm can do it pretty well! In the right plot, after we found 3 structures (AKA prototypes) we summarized the data point according to its nearest structure, and group them by different colors.
 

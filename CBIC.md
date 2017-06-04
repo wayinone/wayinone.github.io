@@ -7,7 +7,7 @@ permalink: /CBIC
 # Toward the Minimum Compression Rate
 
 ---
-Wei-Ying Wang and Stuart Geman, 2017
+#### Wei-Ying Wang and Stuart Geman, 2017
 
 We developed a lossless image compression algorithm that have analytic guarantee. When context size is getting bigger, our algorithm will reach the optimal compression rate a.e. under very light assumptions. We actually don’t need a lot of context size to outperform CALIC algorithm, one of the best scheme so far. In the following plot we compare the bits-per-pixel results of our algorithm to those of CALIC and Jpeg-LS on 4 different test images (the images is shown in the bottom).
 
