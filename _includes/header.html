@@ -46,6 +46,10 @@
 						<h3>{{ page.subTitle }}</h3>
 						<hr class="intro-divider">
 						<ul class="list-inline intro-social-buttons">
+							<li>
+							<!--Specify your own icon by setting <i class="fa-..."><i>, go to http://fontawesome.io/icons/ to search for icons-->
+								<a href="mailto:{{ site.email }}" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></a>
+							</li>
 							{% for social in site.social %}
 							<li>
 								<a href="{{ social.url }}" class="btn btn-default btn-lg"><i class="fa fa-{{ social.title }} fa-fw"></i> <span class="network-name">{{ social.title }}</span></a>

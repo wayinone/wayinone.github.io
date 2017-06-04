@@ -33,25 +33,29 @@ p {
 
 
 h1 {
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: bold;
 	line-height: 30px;
 	color:#000066
 }
 
 h2 {
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: bold;
 	line-height: 28px;
 	color:#000066
 }
 
 h3 {
-	font-size: 18px;
+	font-size: 22px;
 	line-height: 26px;
 }
 
-h4,
+h4 {
+	font-size: 20px;
+	line-height: 24px;
+}
+
 h5,
 h6 {
 	font-size: 17px;
