@@ -12,7 +12,7 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
  - I am using Github Desktop(GD) to sync my repository with local repository (local means in my computer. I will use "repo" as the short for "repository")
    1. Once you connect via GD, everything you changed in the local repo should be visible in the GD. 
 	  - To syn (when you change thing in local repo and want to upload): in GD, type something in the "summary", then press "commit to master", then "Pull origin"
-   2. If you encounter an error message: please tell me who you are, do the following in command line[solution from here](https://stackoverflow.com/questions/11656761/git-please-tell-me-who-you-are-error)
+   2. If you encounter an error message: please tell me who you are, do the following in command line: [solution is from here](https://stackoverflow.com/questions/11656761/git-please-tell-me-who-you-are-error)
 	  ```
 	  1.git init
       2.git config user.name "someone"
@@ -36,23 +36,22 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
  - Every time you make change in the local repository, the jekyll server will update the code and the local webpage will display your work.
  - Keey an eye on powershell since sometime there is bug and you wont see any change in the site.
  - If the website is not updating and no error message, just delete the `/_site` folder, and build again by: (remember to ctrl+C to end the current session.
- ```txt
- jekyll serve
- ```
+	 ```txt
+	 jekyll serve
+	 ```
 
 ## How to add post
  - Place a image in `/img/services/`
  - Create posts in `/_post` to display your services.  Use the follow as an example:
-
-```txt
----
-layout: default
-img: ipad.png
-category: Services
-title: The service title
----
-The description of this service
-```
+	```txt
+	---
+	layout: default
+	img: ipad.png
+	category: Services
+	title: The service title
+	---
+	The description of this service
+	```
  - Note that the file name of each post is "YYYY-MM-DD-..." 
 
 ## Change the font css file	
