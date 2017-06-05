@@ -2,7 +2,7 @@
 layout: default
 img: lena_gray_512_jls_4_23.bmp
 category: Services
-title: Toward the Minimum Compression Rate
+title: Toward the Maximum Compression Rate
 description: |
 ---
   We developed a lossless image compression algorithm that have

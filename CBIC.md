@@ -4,7 +4,7 @@ title: CBIC
 permalink: /CBIC
 ---
 
-# Toward the Minimum Compression Rate
+# Toward the Maximum Compression Rate
 
 ---
 #### Wei-Ying Wang and Stuart Geman, 2017
