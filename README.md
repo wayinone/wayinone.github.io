@@ -23,7 +23,7 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
 ## Using jekyll server to speed up the build
  - I am using Windows, so I used "powershell" to type the command. I think it is better than "cmd"
  - First, you need to be sure that jekyll works on your machine. 
-   - I have to install ruby and use (descibed [here](https://jekyllrb.com/docs/installation/))
+   - I have to install ruby and use (described [here](https://jekyllrb.com/docs/installation/))
    ```
    gem install jekyll
    ``` 
@@ -32,9 +32,9 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
 	 ```txt
 	 jekyll serve
 	 ```
- - Then go to your browers and go to: http://localhost:4000/
+ - Then go to your browser and go to: http://localhost:4000/
  - Every time you make change in the local repository, the jekyll server will update the code and the local webpage will display your work.
- - Keey an eye on powershell since sometime there is bug and you wont see any change in the site.
+ - Keep an eye on powershell since sometime there is bug and you wont see any change in the site.
  - If the website is not updating and no error message, just delete the `/_site` folder, and build again by: (remember to ctrl+C to end the current session.
 	 ```txt
 	 jekyll serve
