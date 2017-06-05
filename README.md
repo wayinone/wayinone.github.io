@@ -4,7 +4,14 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
 
 ## Using Github
  - I am new to Github. What I do to create this site is:
-   -
+   1. create a repository in Github names "YOUR-GITHUB-Username.github.io"
+   2. Pick jekyll theme template at https://jekyllthemes.io/
+   3. Put the theme you choosed in your newly created repository.
+   4. Now you should be able to see your template website online. Go to "YOUR-GITHUB-Username.github.io"
+   
+ - I am using Github Desktop(GD) to sync my repository with local repository (local means in my computer. I will use "repo" as the short for "repository")
+   1. Once you connect via GD, everything you changed in the local repo should be visible in the GD. 
+	 - To syn: in GD, type something in the "summary", then press "commit to master", then P
 
 
 ## Using jekyll server to speed up the build
@@ -45,16 +52,10 @@ The description of this service
 ## Change the font css file	
  - To change the font of your own .md file (e.g. Resume.md, and I am NOT talking about anything in the front page), you need to change css file: Go to "/css/mycss.css" to edit them.
  - Since 
-<<<<<<< HEAD
  1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
  2. default2 will quote "header2.html" (also in folder:"/_include"
  3. header2.html will quote "mycss.css" 
  
-=======
-   1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
-   2. default2 will quote "header2.html" (also in folder:"/_include"
-   3. header2.html will quote "mycss.css" 
->>>>>>> a26ea49cacae86339a21ad3422f6bed56490c90f
 
 ## Using Notepad++
  - Note that you want to install 32bit version since it includes Plugin Manager (So that you have spell checker.)
