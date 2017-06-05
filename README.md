@@ -45,10 +45,16 @@ The description of this service
 ## Change the font css file	
  - To change the font of your own .md file (e.g. Resume.md, and I am NOT talking about anything in the front page), you need to change css file: Go to "/css/mycss.css" to edit them.
  - Since 
+<<<<<<< HEAD
  1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
  2. default2 will quote "header2.html" (also in folder:"/_include"
  3. header2.html will quote "mycss.css" 
  
+=======
+   1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
+   2. default2 will quote "header2.html" (also in folder:"/_include"
+   3. header2.html will quote "mycss.css" 
+>>>>>>> a26ea49cacae86339a21ad3422f6bed56490c90f
 
 ## Using Notepad++
  - Note that you want to install 32bit version since it includes Plugin Manager (So that you have spell checker.)
