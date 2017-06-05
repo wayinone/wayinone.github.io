@@ -11,8 +11,14 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
    
  - I am using Github Desktop(GD) to sync my repository with local repository (local means in my computer. I will use "repo" as the short for "repository")
    1. Once you connect via GD, everything you changed in the local repo should be visible in the GD. 
-	 - To syn: in GD, type something in the "summary", then press "commit to master", then P
-
+	 - To syn (when you change thing in local repo and want to upload): in GD, type something in the "summary", then press "commit to master", then "Pull origin"
+   2. If you encounter an error message: please tell me who you are, do the following in command line[solution from here](https://stackoverflow.com/questions/11656761/git-please-tell-me-who-you-are-error)
+	 ```
+	 1.git init
+     2.git config user.name "someone"
+  	 3.git config user.email "someone@someplace.com"
+	 4.git add *
+	 ```
 
 ## Using jekyll server to speed up the build
  - I am using Windows, so I used "powershell" to type the command. I think it is better than "cmd"
