@@ -5,7 +5,7 @@ category: Services
 title: Toward the Maximum Compression Rate
 description: |
 ---
-  We developed a lossless image compression algorithm that have
+  We developed a lossless image compression algorithm that has
   analytic guarantee. When context size is getting bigger, our algorithm 
   reaches the optimal compression rate a.e. under very light assumptions. 
   We actually don't need a lot of context size to outperform CALIC 
