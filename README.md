@@ -2,6 +2,31 @@
 
 I am using Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
 
+## Using Github
+ - I am new to Github. What I do to create this site is:
+   -
+
+
+## Using jekyll server to speed up the build
+ - I am using Windows, so I used "powershell" to type the command. I think it is better than "cmd"
+ - First, you need to be sure that jekyll works on your machine. 
+   -I have to install ruby and use (descibed [here](https://jekyllrb.com/docs/installation/))
+   ```
+   gem install jekyll
+   ``` 
+ - First you should clone all the repository to the local folder.
+ - In powershell, go to the folder and type
+ ```txt
+ jekyll serve
+ ```
+ - Then go to your browers and go to: http://localhost:4000/
+ - Every time you make change in the local repository, the jekyll server will update the code and the local webpage will display your work.
+ - Keey an eye on powershell since sometime there is bug and you wont see any change in the site.
+ - If the website is not updating and no error message, just delete the `/_site` folder, and build again by: (remember to ctrl+C to end the current session.
+ ```txt
+ jekyll serve
+ ```
+
 ## How to add post
  - Place a image in `/img/services/`
  - Create posts in `/_post` to display your services.  Use the follow as an example:
@@ -23,22 +48,8 @@ The description of this service
  1. these .md articles will have layout: default2 (default2.html is in folder:"/_include")
  2. default2 will quote "header2.html" (also in folder:"/_include"
  3. header2.html will quote "mycss.css" 
+ 
 
-## Using jekyll server to speed up the build
- - First, you need to be sure that jekyll works on your machine. I have to install ruby and some other things for it to work.
- - I am using Windows, so I used powershell to type the command.
- - First you should clone all the repository to the local folder.
- - In powershell, go to the folder and type
- ```txt
- jekyll serve
- ```
- - Then go to your browers and go to: http://localhost:4000/
- - Every time you make change in the local repository, the jekyll server will update the code and the local webpage will display your work.
- - Keey an eye on powershell since sometime there is bug and you wont see any change in the site.
- - If the website is not updating and no error message, just delete the `/_site` folder, and build again by: (remember to ctrl+C to end the current session.
- ```txt
- jekyll serve
- ```
 ## Using Notepad++
  - Note that you want to install 32bit version since it includes Plugin Manager (So that you have spell checker.)
  - After install, open Notepad++, then go to "Plugin->Plugin Manager", install spell checker and Dspell checker. (you will be prompt to install Aspell dictionary.) Practically, open "Plugin->Dspell" and choose the option of auto detect, and use Aspell dictionary.
