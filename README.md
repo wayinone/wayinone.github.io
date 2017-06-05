@@ -1,8 +1,8 @@
-# Landing Page Jekyll theme
+# Wei-Ying's Personal Website
 
-Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
+I am using Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
 
-## How to use
+## How to add post
  - Place a image in `/img/services/`
  - Create posts in `/_post` to display your services.  Use the follow as an example:
 
