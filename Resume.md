@@ -51,8 +51,7 @@ permalink: /Resume
   * W.-Y. Wang and S. Geman, [Comparison Based Image Compression.](/CBIC) In progress. 		
 	* A novel lossless image compression scheme with analytic performance guarantees 
 	* Outperforming state-of-the-art algorithms in bit-per-pixel results
-	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)	
-	
+	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)		
 
   * W.-Y. Wang and S. Geman, [Robust Generalized Clustering.](/RRA)  In progress.
 	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% of corrupted) 
@@ -61,8 +60,7 @@ permalink: /Resume
 	
   * W.-Y. Wang and S. Geman, [Clustering to Shapes.](/PSA)  In progress.
 	* An iterative PCA method for clustering high dimensional data into descriptive manifolds
-	* A novel dimension reduction tool, capable of obtaining complicated structures, like spiral-shaped data, in a short amount of time	
-	
+	* A novel dimension reduction tool, capable of obtaining complicated structures, like spiral-shaped data, in a short amount of time		
 	
 ---
 ## Projects ##
@@ -91,13 +89,12 @@ permalink: /Resume
 
   * Brown university, 2011 - 2012: Teaching Assistant on: Statistical Inference
     *  Topics: statistical models, point estimator, ANOVA, hypothesis test, and regression
-
-  * Academia Sinica, Institute of Mathematics, Taiwan, 2008 - 2010: Research Assistant
-    *  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
-    *  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
 	
 ---
 ## Employment
+  * Academia Sinica, Institute of Mathematics, Taiwan, 2008 - 2010: Research Assistant
+	*  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
+	*  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
   * Military Service, Taiwan, 2007 - 2008: Coastal Patrol Corporal
   
 --- 
