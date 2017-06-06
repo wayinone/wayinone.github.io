@@ -12,7 +12,7 @@ permalink: /Resume
 
 ---
 ## Summary ##
-* Seeking a data scientist position in which I would contribute to the success of a business 
+* Seeking a data scientist position (willing to relocate)
 * Applied Mathematics Ph.D. with 10+ years experience in programming
 * Specialized in data classification and statistical image analysis
 * Analyzing large data to develop an image compression algorithm that achieves the best compression rate
