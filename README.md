@@ -39,7 +39,11 @@ I am using Jekyll theme based on [landing-page bootstrap theme ](http://startboo
 	 ```txt
 	 jekyll serve
 	 ```
-
+# To build up your own website:
+The first thing to do is to change the information of:
+ - `index.html`
+ - `_config.yml`
+ 
 ## How to add post
  - Place a image in `/img/services/`
  - Create posts in `/_post` to display your services.  Use the follow as an example:
