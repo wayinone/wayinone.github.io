@@ -54,7 +54,7 @@ permalink: /Resume
 	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)		
 
   * W.-Y. Wang and S. Geman, [Robust Generalized Clustering.](/RRA)  In progress.
-	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% of corrupted) 
+	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% corrupted) 
 	* Approximating an NP-hard problem with a modified backward selection procedure
 	* Implemented in C and Python (by ctypes module)
 	
