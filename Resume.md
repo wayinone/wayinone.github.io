@@ -26,8 +26,8 @@ permalink: /Resume
 * Image analysis
   * Compression, denoising, 3D reconstruction, pattern recognition		  
 * Programming	
-  * Proficient with: Python(Numpy, Keras), Matlab,  Latex
-  * Experienced with: C/C++ (Eclipse), Amazon EC2, Mathematica, R, CUDA
+  * Proficient with: Python(Numpy, Keras, ctypes), Matlab,  Latex
+  * Experienced with: C/C++ (Eclipse), Amazon EC2, Mathematica, R
 * System
   * Windows, Linux
 
@@ -66,7 +66,7 @@ permalink: /Resume
 ## Projects ##
   * Kaggle Competition: Digit Recognizer
 	* Applying convolution neural network to build a digit classifier from MNIST data (37,800 training data)
-	* Achieving 99.21% correct rate on 28,000 test data
+	* Achieving 99.21% correction rate on 28,000 test data
 	
   * Improving 3D Stereo Data with Markov Random Field
 	*  Reduce the mismatching problem when reconstructing 3D images from stereo data
