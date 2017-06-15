@@ -1,6 +1,6 @@
 # Wei-Ying's Personal Website
 
-I am using Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
+I am using Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/).
 
 ## Using Github
  - I am new to Github. What I do to create this site is:
