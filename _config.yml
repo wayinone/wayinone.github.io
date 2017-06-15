@@ -24,5 +24,7 @@ highlighter: rouge
 # ----------------------- #
 
 social:
+  - title: github
+    url: https://github.com/wayinone
   - title: linkedin
     url: https://www.linkedin.com/in/wayin1/
