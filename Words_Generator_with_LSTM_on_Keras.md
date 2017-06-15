@@ -4,15 +4,16 @@ title: LSTM
 permalink: /LSTM
 ---
 
+
 # Words Generator with LSTM on Keras
 
 ##### Wei-Ying Wang 6/13/2017
 
-This is a simple LSTM model built with Keras. The purpose of this tutorial is to help you gain solid understanding of LSTM model and the usage of Keras. You can download the related files on [MyGithub](https://github.com/wayinone/Char_LSTM).
+This is a simple LSTM model built with Keras. The purpose of this tutorial is to help you gain solid understanding of LSTM model and the usage of Keras.
 
-The code here wants to build [Karpathy's Character-Level Language Models](https://gist.github.com/karpathy/d4dee566867f8291f086) with Keras. Karpathy posted the idea on his [blog](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). It is a very fun blog post, which generates shakespear's article, as well as Latext file with many math symbols. I guess we will never run out of papers this way...
+The code here wants to build [Karpathy's Character-Level Language Models](https://gist.github.com/karpathy/d4dee566867f8291f086) with Keras. Karpathy posted the idea on his [blog](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). It is a very fun blog post, which generated shakespear's article, as well as Latex file with many math symbols. I guess we will never run out of papers this way...
 
-I found a lot of "typo" in the official document of [keras](keras.io). Don't be too harsh to them; it is expected since keras is a huge module and it is hard for their document to keep track of their own update. I write this tutorial to help people that want to try LSTM on Keras. I spent a lot of time looking into the script of keras, which can be found in your python folder:
+I found a lot of "typo" in the official document of [keras](keras.io). Don't be too harsh to them; it is expected since keras is a huge module and it is hard for their document to keep on track of their own update. I write this tutorial to help people that want to try LSTM on Keras. I spent a lot of time looking into the script of keras, which can be found in your python folder:
 ```
 \Lib\site-packages\keras
 ```
@@ -23,6 +24,7 @@ Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 08:06:12) [MSC v.1900 64 bit (AM
 
 keras version 1.2.2
 ```
+
 
 ```python
 import numpy as np
@@ -48,7 +50,7 @@ The original shakespeare data has 65 distint characters. To relieve some computa
 ```
 ",.?! \n:;-'"
 ```
-characters. Should any other characters appear in the raw data, I simply change it into space character, i.e. `' '`.
+characters. Should any other characters appear in the raw data, I simply change it into space character.
 
 In the end we tranfer the strings of size `n` into a list of integers, `x`. You can convert the interger back to string by dictionary `ix2char`.
 
@@ -103,7 +105,7 @@ Note that I only use `N=200000` samples to build the model.
 
 ```python
 T=16
-x_nTd,y_n = AuxFcn.create_catgorical_dataset(x, dim,T)
+x_nTd,y_n = AuxFcn.create_catgorical_dataset(x, d,T)
 
 N = 200000
 x_tmp,y_tmp = x_nTd[:N,:,:],y_n[:N,:]
@@ -111,13 +113,13 @@ x_tmp,y_tmp = x_nTd[:N,:,:],y_n[:N,:]
 
 
 ```python
-print('This are 15 of the samples of a slice of `x_tmp`:\n')
+print('This are 15 of thesamples of a slice of `x_tmp`:\n')
 print(AuxFcn.translate(x_tmp[200:215,-1,:],ix2char))
 print('\n The following is corresponding `y`, You can see that `y_n[i,:]=x[i+1,0,:]`:\n')
 print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
 ```
 
-    This are 15 of the samples of a slice of `x_tmp`:
+    This are 15 of thesamples of a slice of `x_tmp`:
     
     cius is chief e
     
@@ -149,7 +151,7 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
                           |
     h_1 -- h_2 -- ... -- h_T
      |      |     ...     |
-    x_1 -- x_2 -- ... -- x_T
+    x_1    x_2    ...    x_T
 
     ```
 
@@ -185,7 +187,7 @@ The forward propagation will be: set $h_0=\bf 0$ and $s_0=\bf 0$, then
 m=128
 model = Sequential()
 model.add(LSTM(m, input_shape=(T, d)))
-model.add(Dense(dim,activation='softmax'))
+model.add(Dense(d,activation='softmax'))
 #%%
 adam = Adam(clipvalue=1)# any gradient will be clipped to the interval [-1,1]
 model.compile(loss='categorical_crossentropy',
@@ -199,7 +201,7 @@ model.summary()
     ====================================================================================================
     lstm_2 (LSTM)                    (None, 128)           84480       lstm_input_2[0][0]               
     ____________________________________________________________________________________________________
-    dense_2 (Dense)                  (None, 36)            4644        lstm_2[0][0]                     
+    dense_1 (Dense)                  (None, 36)            4644        lstm_2[0][0]                     
     ====================================================================================================
     Total params: 89,124
     Trainable params: 89,124
@@ -234,7 +236,7 @@ model.summary()
 history = model.fit(x_tmp, y_tmp,
                   shuffle=False,
                   batch_size=32,
-                  nb_epoch=300,
+                  nb_epoch=10,
                   verbose=2, # verbose controls the infromation to be displayed. 0: no information displayed
                   initial_epoch=0)
 #%%
@@ -268,23 +270,47 @@ The following code generates the text
 ```python
 #%%
 initial_x = x_nTd[250000,:,:]
-words = AuxFcn.txt_gen(model_trained,initial_x,n=500,diction=my_ix2char) # This will generate 100 words.
+words = AuxFcn.txt_gen(model_trained,initial_x,n=1000,diction=my_ix2char) # This will generate 100 words.
 print(words)
 ```
 
-    ve to a liberce:
-    services marrying flop themenfectime him; for when's vilingrien rive,
-    whon, now your close will specun away, my lade!
+    s
+    to live the dees in, my lord, as what the wars to stam;
+    those good nows to my your past,
+    i will a cack up bodd withes s
+    are read'd
+    angefing to hame made men gave.
     
-    first innus
-    unery made a lipe, and but be charituse:
-    if he were parren he have for ckre als
-    to the velunge pretch quoke,
-    i warrant thee speck those being the judgmer'd
-    the lefp to peace! for like a mest is,
-    and to vich crans' you reseeners,
-    so suefort my elved remotchors plagled that they bead him when
-    here i go see thee, let me dischage eatter and well. good sa
+    queen margaret:
+    he caners, and scorn'd the there, no worshieful geafles and to be changes onde:
+    but they grant y be weeping
+    the kinging in pain to ends you to rome,
+    all tongage own business?
+    
+    first murderer:
+    said, lady, him she's friends,
+    wherein i wish here must?
+    
+    clarence:
+    o, lady moretworanc which in any turbted; but we my young direffally commended of thems.
+    thou launtient fambiness
+    she my ligest with?
+    but mess yours thy knews:
+    now it shall i have i lo dows, ladies, when land
+    thee are the lie;
+    and have too thou are those
+    than will reckects
+    flatwedlen my wife come a lord the gone.
+    
+    second murderer:
+    no blood dawger but itself: the plague is the kill!
+    
+    gloucester:
+    say! marrying wry plebeing: ran
+    up hour namelier in him.
+    weretimy i shall fears you good offend atonest and fuelong,
+    to destine and a nasters,
+    well see what be 
     
 
 ## Appendix
@@ -328,4 +354,5 @@ To have dropout (note that the website of [keras](keras.io) uses keyword 'dropou
  dropout_W: float between 0 and 1. Fraction of the input units to drop for input gates.
  dropout_U: float between 0 and 1. Fraction of the input units to drop for recurrent connections. 
  ```
+
 
