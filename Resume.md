@@ -67,6 +67,10 @@ permalink: /Resume
   * Kaggle Competition: Digit Recognizer
 	* Applying convolution neural network to build a digit classifier from MNIST data (37,800 training data)
 	* Achieving 99.21% correction rate on 28,000 test data
+
+  * [Text Generator with Recurrent Neural Network](/LSTM)
+	* Using LSTM on Python (Keras on Tensorflow backend) to build a predictive context model
+	* Generating Shakespeare-like article by analyzing Shakespeare's work
 	
   * Improving 3D Stereo Data with Markov Random Field
 	*  Reduce the mismatching problem when reconstructing 3D images from stereo data
@@ -80,11 +84,7 @@ permalink: /Resume
   * 3D Reconstruction with Structured Light
 	* Reconstructing a 3D image with a camera and structured light from a projector
 	* Obtaining a high resolution 3D image in a split second
-	
-  * Statistical Analysis of Non-homogeneous Earthquake Data
-	* Generalizing kernel density estimation on non-homogeneous Poisson process to analyze aftershocks data
-	* Reducing the bias of misspecified model without boundary effect
-	
+		
 ---	
 ## Academic Experience
   * Brown university, 2016: Teaching Assistant on: Probabilities in Quantum Mechanics
