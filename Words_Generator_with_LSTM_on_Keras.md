@@ -4,15 +4,16 @@ title: LSTM
 permalink: /LSTM
 ---
 
+
 # Words Generator with LSTM on Keras
 
 ##### Wei-Ying Wang 6/13/2017
 
-This is a simple LSTM model built with Keras. The purpose of this tutorial is to help you gain solid understanding of LSTM model and the usage of Keras.
+This is a simple LSTM model built with Keras. The purpose of this tutorial is to help you gain some understanding of LSTM model and the usage of Keras. This post is generated from jupyter notebook. You can download the .ipynb file, along with the material used here, at [My Github](https://github.com/wayinone/Char_LSTM)
 
-The code here wants to build [Karpathy's Character-Level Language Models](https://gist.github.com/karpathy/d4dee566867f8291f086) with Keras. Karpathy posted the idea on his [blog](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). It is a very fun blog post, which generated shakespear's article, as well as Latex file with many math symbols. I guess we will never run out of papers this way...
+The code here wants to build [Karpathy's Character-Level Language Models](https://gist.github.com/karpathy/d4dee566867f8291f086) with Keras. Karpathy posted the idea on his [blog](http://karpathy.github.io/2015/05/21/rnn-effectiveness/). It is a very fun blog post, which generated shakespear's article, as well as Latex file with many math symbols. I guess we will never run out of papers this way... Most of all, this seems to be a great starting point to understand recurrant networks.
 
-I found a lot of "typo" in the official document of [keras](keras.io). Don't be too harsh to them; it is expected since keras is a huge module and it is hard for their document to keep on track of their own update. I write this tutorial to help people that want to try LSTM on Keras. I spent a lot of time looking into the script of keras, which can be found in your python folder:
+I found a lot of "typo" in the official document of [keras](keras.io). Don't be too harsh to them; it is expected since keras is a extemely complicated module and it is hard for their document to keep on track of their own update. I write this tutorial to help people that want to try LSTM on Keras. I spent a lot of time looking into the script of keras, which can be found in your python folder:
 ```
 \Lib\site-packages\keras
 ```
@@ -23,6 +24,65 @@ Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 08:06:12) [MSC v.1900 64 bit (AM
 
 keras version 1.2.2
 ```
+
+## Shakespeare vs the Counterfeit
+Let's take a peek at the masterpiece:
+>all:
+against him first: he's a very dog to the commonalty.
+
+>second citizen:
+consider you what services he has done for his country?
+
+>first citizen:
+very well; and could be content to give him good
+report fort, but that he pays himself with being proud.
+
+>second citizen:
+nay, but speak not maliciously.
+
+>first citizen:
+i say unto you, what he hath done famously, he did
+it to that end: though soft-conscienced men can be
+content to say it was for his country he did it to
+please his mother and to be partly proud; which he
+is, even till the altitude of his virtue.
+
+>second citizen:
+what he cannot help in his nature, you account a
+vice in him. you must in no way say he is covetous.
+
+Ane the following is the counterfeit:
+>tyrrin:
+in this follow'd her emeth tworthbour both!
+the great of roguess and crave-
+down to come they made presence not been me would?
+
+>stanley:
+my rogrer to thy sorrow and, none.
+
+>king richard iii:
+o, lading freeftialf
+the brown'd of this well was a
+manol, let me happy wife on the conqueser love.
+
+>king richard iii:
+no, tyrend, and only his storces wish'd,
+as there, and did her injury.
+
+>hastings:
+o, shall you shall be thee,
+the banters, that the orditalles in provarable-shidam; i did not be so frangerarr engley!
+what is follow'd hastely be good in my son.
+
+>king richard iii:
+or you good thought,
+were they hatenings at temper his falls,
+firsh to by do all,
+and adsime.
+if i her joy.
+
+It is amazing how similar (structurewise) between the real work and the conterfeit. This tutorial will tell you step by step how this can be down with keras, along with some of my notes about the usage of keras.
+
 
 
 ```python
@@ -43,7 +103,7 @@ import AuxFcn
 
 ## Data input
 
-A tiny part of the code in this section here is using Karpathy's code in [here](https://gist.github.com/karpathy/d4dee566867f8291f086). 
+A small part of the code in this section is using Karpathy's code in [here](https://gist.github.com/karpathy/d4dee566867f8291f086). 
 
 The original shakespeare data has 65 distint characters. To relieve some computational burden, I reduced it into 36 characters with my own function `AuxFcn.data_reducing()`. Basically, I change all the uppercase letters to lowercase one, and only retain
 ```
@@ -61,14 +121,14 @@ data = AuxFcn.data_reducing(data)
 
 chars = list(set(data))
 n, d = len(data), len(chars)
-print('data has %d characters, where %d of them are unique.' % (n, d))
+print('Data has %d ASCII characters, where %d of them are unique.' % (n, d))
 char2ix = { ch:i for i,ch in enumerate(chars) }
 ix2char = { i:ch for i,ch in enumerate(chars) }
 #%% from text data to int32
 x = [char2ix[data[i]] for i in range(len(data))]
 ```
 
-    data has 1115394 characters, where 36 of them are unique.
+    Data has 1115394 ASCII characters, where 36 of them are unique.
     
 
 
@@ -112,22 +172,22 @@ x_tmp,y_tmp = x_nTd[:N,:,:],y_n[:N,:]
 
 
 ```python
-print('This are 15 of thesamples of a slice of `x_tmp`:\n')
+print('These are 15 of the samples of a slice of `x_tmp`:\n')
 print(AuxFcn.translate(x_tmp[200:215,-1,:],ix2char))
-print('\n The following is corresponding `y`, You can see that `y_n[i,:]=x[i+1,0,:]`:\n')
+print('\nThe following is corresponding `y`, You can see that `y_n[i,:]=x[i+1,0,:]`:\n')
 print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
 ```
 
-    This are 15 of thesamples of a slice of `x_tmp`:
+    These are 15 of the samples of a slice of `x_tmp`:
     
-    cius is chief e
+    hief enemy to t
     
-     The following is corresponding `y`, You can see that `y_n[i,:]=x[i+1,0,:]`:
+    The following is corresponding `y`, You can see that `y_n[i,:]=x[i+1,0,:]`:
     
-    ius is chief en
+    ief enemy to th
     
 
-## Defining an LSTM layer 
+## Constructing an LSTM layer 
 
  1. In the following, we will assign the first layer to be LSTM
     ```
@@ -137,14 +197,14 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
     This means: when unroll this recurrent layer, we will see:
 
       * 6 LSTM cells, that output T hidden units $(h_1,...,h_T)$, where each unit is a vector of size $m$. 
-        - Note that there are also T state units $(s_1,...,s_T$, that only used between the LSTM cells in the same layer.
+        - Note that there are also T state units $(s_1,...,s_T)$, that only used between the LSTM cells in the same layer.
           - the state units (AKA recurrent units) controls long term information, which will be controlled by forget gate. 
       * The input layer are T units  $(x_1,...,x_T)$, each unit is a vector of size `d`
       * Note that every LSTM cell **shares** the same parameter.
 
  2. The next layer is the output layer, using `softmax`. Note that the softmax only applies on the information of $h_T$, the last activation of $h$. 
 
- 3. The structure of the unrolled neural network is:
+ 3. The structure of the unrolled neural network is (Also, take a look at Appendix 4, where a different architechure is defined):
     ```
                           y
                           |
@@ -156,19 +216,19 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
 
 ### Parameters in LSTM layer
 
-I will give a little explaination on the number of parameter of the LSTM layer.
+I will give a little explaination on the numbers of parameter of a LSTM layer.
 
-The calculation of $h_t$, $t=1,2,...,T$, requires:$$U*h_{t-1}+W*x_t+b,$$ for        
+The calculation of $h_t$, $t=1,2,...,T$, requires:$$U\cdot h_{t-1}+W\cdot x_t+b,$$ where       
  
- - $U = (U_f,U_g,U_o,U_i)$,
- - $W = (W_f,W_g,W_o,W_i)$, and
- - $b = (b_f,b_g,b_o,b_i)$, where
+ - $U = (U_f,U_c,U_o,U_i)$,
+ - $W = (W_f,W_c,W_o,W_i)$, and
+ - $b = (b_f,b_c,b_o,b_i)$, where
    - $f$: forget gate
-   - $g$: external input gate 
+   - $c$: internal state 
    - $o$: output gate
    - $i$: input 
      
-Note that each $U$ is (m,m), each $W$ is (m,d), each $h$ is (m,), we will totally need
+Note that each $U$ is (m,m), each $W$ is (m,d), each $h$ is (m,). Thus, in total we have
 $$4\cdot(m^2+m\cdot d+m)$$ parameters.
 
 ### Forward Propagation
@@ -188,7 +248,7 @@ model = Sequential()
 model.add(LSTM(m, input_shape=(T, d)))
 model.add(Dense(d,activation='softmax'))
 #%%
-adam = Adam(clipvalue=1)# any gradient will be clipped to the interval [-1,1]
+adam = Adam(clipvalue=1)# all the gradient will be clipped to the interval [-1,1]
 model.compile(loss='categorical_crossentropy',
               optimizer=adam,
               metrics=['accuracy'])
@@ -200,13 +260,15 @@ model.summary()
     ====================================================================================================
     lstm_2 (LSTM)                    (None, 128)           84480       lstm_input_2[0][0]               
     ____________________________________________________________________________________________________
-    dense_1 (Dense)                  (None, 36)            4644        lstm_2[0][0]                     
+    dense_2 (Dense)                  (None, 36)            4644        lstm_2[0][0]                     
     ====================================================================================================
     Total params: 89,124
     Trainable params: 89,124
     Non-trainable params: 0
     ____________________________________________________________________________________________________
     
+
+Note that the `Output Shape` are `(None, 128)` and `(None, 36)`, this means the model can receive dynamic batch size, i.e. if you input a batch of samples of size `k` (for calculate of SGD), the first layer will generate output of size `(k,128)`. Take a look at Appendix 1, where I explain `batch_input_shape`, `input_shape`, `batch_shape`.
 
 ## Training the model
 
@@ -220,8 +282,8 @@ model.summary()
       
  * You can estimate how many time it will take for 1 epochs. By setting
      ```
-     initial_epoch=0
-     nb_epoch=1
+     initial_epoch = 0
+     nb_epoch = 1
      ```
    And if you set `initial_epoch=1` in the next time you execute the `model.fit`, it will initialize the weights with your previous result. That is pretty handy.
    
@@ -234,12 +296,12 @@ model.summary()
 ```python
 history = model.fit(x_tmp, y_tmp,
                   shuffle=False,
-                  batch_size=32,
-                  nb_epoch=10,
-                  verbose=2, # verbose controls the infromation to be displayed. 0: no information displayed
+                  batch_size=2^5,
+                  nb_epoch=1, # adjust this to calculate more epochs.
+                  verbose=0, # 0: no info displayed; 1: most info displayed;2: display info each epoch
                   initial_epoch=0)
 #%%
-AuxFcn.print_model_history(history)
+# AuxFcn.print_model_history(history)
 
 ```
 
@@ -252,10 +314,10 @@ AuxFcn.print_model_history(history)
     ```
     model = keras.models.load_model('keras_char_RNN')
     ```
- * The training procedure will not give a good accuration, I got accuration about 0.6. But it is expected, since if you got 90% correction rate, then Shakespeare is just a word machine without any inspiration... i.e. The model learned is Shakespear's grammar, structures, and words. Far from the idea or spirit of Shakespear.
+ * The training procedure will not give a good accuration, I got accuration about 0.63. But it is expected, if you got 90% correction rate, then Shakespeare is just a word machine without any inspiration... i.e. The model learned is Shakespear's grammar, structures, and words. Far from the idea or spirit of Shakespear.
 
 ## Fun time: Generate the txt
-To have fun fast, you can load the model I generated, don't forget to load the dictionary `ix2char`
+To have fun fast, you can load the model I generated, which has ran about 60 epoch (each epoch took about 140s), don't forget to load the dictionary `ix2char` as well.
 
 
 ```python
@@ -269,52 +331,51 @@ The following code generates the text
 ```python
 #%%
 initial_x = x_nTd[250000,:,:]
-words = AuxFcn.txt_gen(model_trained,initial_x,n=1000,diction=my_ix2char) # This will generate 100 words.
+words = AuxFcn.txt_gen(model_trained,initial_x,n=1000,diction=my_ix2char) # This will generate 1000 words.
 print(words)
 ```
 
-    s
-    to live the dees in, my lord, as what the wars to stam;
-    those good nows to my your past,
-    i will a cack up bodd withes s
-    are read'd
-    angefing to hame made men gave.
+    diens if praise his grapie,
+    and now that were shake shame thee lawn. it make my his eyes?
     
-    queen margaret:
-    he caners, and scorn'd the there, no worshieful geafles and to be changes onde:
-    but they grant y be weeping
-    the kinging in pain to ends you to rome,
-    all tongage own business?
+    menenius:
+    it was and hear me of mind.
+    or with the death motions,
+    mutines unhoo jeily her entertablaness in the queen the duke of you make by edward
+    that office corriag
+    withal feo!
+    will it the fat; our poss, myshling withaby gop with smavis,
+    i am, but all stands not.
     
-    first murderer:
-    said, lady, him she's friends,
-    wherein i wish here must?
+    lady atus:
+    was with the friends him, triud!
     
-    clarence:
-    o, lady moretworanc which in any turbted; but we my young direffally commended of thems.
-    thou launtient fambiness
-    she my ligest with?
-    but mess yours thy knews:
-    now it shall i have i lo dows, ladies, when land
-    thee are the lie;
-    and have too thou are those
-    than will reckects
-    flatwedlen my wife come a lord the gone.
+    hasting:
+    well, yet threng forth that not a pail;
+    thou deserve terry keeps, to know humbance it, and that they mugabless cabiling given
+    burght with wile wondelvy!
+    lord, sut cursied the gray to tell me, sites by dangerand great business;
+    go fan
+    a power to dies 't
+    bul the volsciagfel'd,
+    when have did is frame?
     
-    second murderer:
-    no blood dawger but itself: the plague is the kill!
+    cominius:
+    behay, i will know the truft, we prome, but it intworty knee, our enemies,
+    whose as him 'fiselfuld me that know no more;
+    must not smead in shed reasons!
     
     gloucester:
-    say! marrying wry plebeing: ran
-    up hour namelier in him.
-    weretimy i shall fears you good offend atonest and fuelong,
-    to destine and a nasters,
-    well see what be 
+    say, making high even: for day i thank you aid; be not.
+    
+    first murderer:
+    so thou wife from mine,
+    less very the
     
 
 ## Appendix
 
-### Confusion about `batch_input_shape`, `input_shape`, `batch_shape`
+### 1. Confusion about `batch_input_shape`, `input_shape`, `batch_shape`
 
 I check the keras code to derive the following statement.
 
@@ -336,7 +397,7 @@ I check the keras code to derive the following statement.
 
     This way one can input any number of samples in the model to get predictions, otherwise, if you use `batch_input_shape` then the input must be consistent to the shape.
 
-### What is `stateful` parameter
+### 2. What is `stateful` parameter
 You might be wondered what is `stateful` argument when building the first LSTM layer. i.e.
 ```
 model.add(LSTM(...,stateful=False))
@@ -347,11 +408,59 @@ The previous procedure doesn't make a lot of sense. I just put it the way so you
 
 The defaut value is `stateful=False`.
 
-### The dropout in LSTM 
+### 3. The dropout in LSTM 
 To have dropout (note that the website of [keras](keras.io) uses keyword 'dropout', which cannot run in this version), use the following keywords when building LSTM layer (i.e. `model.add(LSTM(...,dropout_W=0.2,dropout_U=0.2))`. The describtion I found in keras module is:
  ```
  dropout_W: float between 0 and 1. Fraction of the input units to drop for input gates.
  dropout_U: float between 0 and 1. Fraction of the input units to drop for recurrent connections. 
  ```
+
+
+### 4. What is `return_sequences` parameter
+This parameter is defined when assigning LSTM layer, e.g. 
+```
+LSTM(m, input_shape=(T, d), return_sequences=True)
+```
+This will ouput hidden units of each time, i.e. $h_1,h_2,...,h_T$ to output. By default it is set to `False` means the layer will only ouput $h_T$, the last time step.
+
+Take a look at `Ouput Shape` at model summary:
+
+
+```python
+m=128
+model = Sequential()
+model.add(LSTM(m, input_shape=(T, d), 
+          return_sequences=True))
+model.add(Dense(d,activation='softmax'))
+model.summary()
+```
+
+    ____________________________________________________________________________________________________
+    Layer (type)                     Output Shape          Param #     Connected to                     
+    ====================================================================================================
+    lstm_8 (LSTM)                    (None, 25, 128)       84480       lstm_input_7[0][0]               
+    ____________________________________________________________________________________________________
+    dense_7 (Dense)                  (None, 25, 36)        4644        lstm_8[0][0]                     
+    ====================================================================================================
+    Total params: 89,124
+    Trainable params: 89,124
+    Non-trainable params: 0
+    ____________________________________________________________________________________________________
+    
+
+ * Note that in this architecture, the `Output Shape` of the first layer is `(None,T,m)`, where `m` is the dimension of each $h_i$, $i=1,2,...,T$ .
+
+     * Compare to the model we had, the first layer's `Output Shape` is `(None,m)`.
+
+ * So, in this case, the architecture is:
+    ```
+    y_1    y_2           y_T
+     |      |             |
+    h_1 -- h_2 -- ... -- h_T
+     |      |     ...     |
+    x_1    x_2    ...    x_T
+    ```
+ * It is also clear that if you want to stack the LSTM models, you will have to on `return_sequences`.
+
 
 
