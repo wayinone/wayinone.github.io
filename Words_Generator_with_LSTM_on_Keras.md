@@ -5,6 +5,7 @@ permalink: /LSTM
 ---
 
 
+
 # Words Generator with LSTM on Keras
 
 ##### Wei-Ying Wang 6/13/2017
@@ -27,59 +28,64 @@ keras version 1.2.2
 
 ## Shakespeare vs the Counterfeit
 Let's take a peek at the masterpiece:
->all:
-against him first: he's a very dog to the commonalty.
 
->second citizen:
-consider you what services he has done for his country?
-
->first citizen:
-very well; and could be content to give him good
-report fort, but that he pays himself with being proud.
-
->second citizen:
-nay, but speak not maliciously.
-
->first citizen:
-i say unto you, what he hath done famously, he did
+>Second Citizen:<br />
+Consider you what services he has done for his country?<br />
+<br />
+First Citizen:<br />
+Very well; and could be content to give him good
+report fort, but that he pays himself with being proud.<br />
+<br />
+Second Citizen:<br />
+Nay, but speak not maliciously.<br />
+<br />
+First Citizen:<br />
+I say unto you, what he hath done famously, he did
 it to that end: though soft-conscienced men can be
 content to say it was for his country he did it to
 please his mother and to be partly proud; which he
-is, even till the altitude of his virtue.
-
->second citizen:
-what he cannot help in his nature, you account a
-vice in him. you must in no way say he is covetous.
+is, even till the altitude of his virtue.<br />
+<br />
+Second Citizen:<br />
+What he cannot help in his nature, you account a
+vice in him. You must in no way say he is covetous.<br />
+<br />
+First Citizen:<br />
+If I must not, I need not be barren of accusations;
+he hath faults, with surplus, to tire in repetition.
+What shouts are these? The other side o' the city
+is risen: why stay we prating here? to the Capitol!
 
 Ane the following is the counterfeit:
->tyrrin:
-in this follow'd her emeth tworthbour both!
-the great of roguess and crave-
-down to come they made presence not been me would?
-
->stanley:
-my rogrer to thy sorrow and, none.
-
->king richard iii:
+>tyrrin:<br />
+in this follow'd her emeth tworthbour both!<br />
+the great of roguess and crave-<br />
+down to come they made presence not been me would?<br />
+<br />
+stanley:<br />
+my rogrer to thy sorrow and, none.<br />
+<br />
+king richard iii:<br />
 o, lading freeftialf
 the brown'd of this well was a
-manol, let me happy wife on the conqueser love.
-
->king richard iii:
+manol, let me happy wife on the conqueser love.<br />
+<br />
+king richard iii:<br />
 no, tyrend, and only his storces wish'd,
-as there, and did her injury.
-
->hastings:
+as there, and did her injury.<br />
+<br />
+hastings:<br />
 o, shall you shall be thee,
 the banters, that the orditalles in provarable-shidam; i did not be so frangerarr engley!
-what is follow'd hastely be good in my son.
-
->king richard iii:
+what is follow'd hastely be good in my son.<br />
+<br />
+king richard iii:<br />
 or you good thought,
 were they hatenings at temper his falls,
 firsh to by do all,
 and adsime.
 if i her joy.
+
 
 It is amazing how similar (structurewise) between the real work and the conterfeit. This tutorial will tell you step by step how this can be down with keras, along with some of my notes about the usage of keras.
 
@@ -461,6 +467,7 @@ model.summary()
     x_1    x_2    ...    x_T
     ```
  * It is also clear that if you want to stack the LSTM models, you will have to on `return_sequences`.
+
 
 
 

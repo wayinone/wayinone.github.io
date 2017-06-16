@@ -22,6 +22,8 @@ h4,
 h5,
 h6,
 blockquote,
+pre,
+code,
 p {
 	font-family: Verdana, Geneva, sans-serif;
 	font-style: normal;
@@ -68,18 +70,41 @@ p {
 	line-height: 22px;
 	color: #555;
 }
+
 blockquote {
-	font-size: 17px;
-	font-weight: 400;
-	line-height: 23px;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
 }
+/*blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+*/
+blockquote p {
+  display: inline;
+}
+/*code is for displaying code inside a paragraph,
+  pre is for inline display code, (will form its own paragraph.) */
+
+
 pre,code {
-	font-family: Menlo, Monaco, "Courier New", monospace
-	font-size: 14px;
+	font-size: 16px;
+	font-family:   Menlo, Monaco,"Courier New", monospace;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 23px;
+	overflow: auto;
+}
+pre {
+	border-left: 5px solid #ccc;
 }
 
 body,
@@ -90,7 +115,7 @@ html {
 
 /*this restrict the content in the middle*/
 p,
-*:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
+*:not(div):not(img):not(body):not(html):not(li)/*:not(blockquote)*/:not(p) {
   margin: 1rem auto 1rem;
   max-width: 50rem;
   /* margin-right: 100px;
