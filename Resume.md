@@ -27,7 +27,7 @@ permalink: /Resume
   * Compression, denoising, 3D reconstruction, pattern recognition		  
 * Programming	
   * Proficient with: Python(Numpy, Keras, ctypes), Matlab,  Latex
-  * Experienced with: C/C++ (Eclipse), Amazon EC2, Mathematica, R
+  * Experienced with: SQL(MySQL), C/C++ (Eclipse), Amazon EC2, Mathematica, R
 * System
   * Windows, Linux
 
