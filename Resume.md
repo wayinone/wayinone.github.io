@@ -39,7 +39,7 @@ permalink: /Resume
   * Dissertation: Image Compression and Data Clustering: New Takes on Some Old Problems
   * Advisor: Stuart Geman
 	
-* National Taiwan University, Taiwan. 2005 - 06
+* National Taiwan University, Taiwan. 2004 - 06
   * M.Sc. Mathematics/Track of Statistics
   * Advisor Ming-Yen Cheng
 * National Taiwan University, Taiwan.  2000 - 04
