@@ -34,15 +34,15 @@ permalink: /Resume
 ---
 ## Education
 
-* Brown University, Providence, RI. 2010 - 17
+* Brown University, Providence, RI. Sep 2010 - May 2017
   * Ph.D. Applied Mathematics
   * Dissertation: Image Compression and Data Clustering: New Takes on Some Old Problems
   * Advisor: Stuart Geman
 	
-* National Taiwan University, Taiwan. 2004 - 06
+* National Taiwan University, Taiwan. Sep 2004 - May 2006
   * M.Sc. Mathematics/Track of Statistics
   * Advisor Ming-Yen Cheng
-* National Taiwan University, Taiwan.  2000 - 04
+* National Taiwan University, Taiwan. Sep 2000 - May 2004
   * B.A. Economics
   
 
@@ -87,18 +87,19 @@ permalink: /Resume
 		
 ---	
 ## Academic Experience
-  * Brown university, 2016: Teaching Assistant on: Probabilities in Quantum Mechanics
+  * Brown university, Sep 2016 - Dec 2016: Teaching Assistant on: Probabilities in Quantum Mechanics
     *  Topics: tensor representation, observable, entanglement, and quantum teleportation 
 
-  * Brown university, 2011 - 2012: Teaching Assistant on: Statistical Inference
+  * Brown university, Sep 2011 - May 2012: Teaching Assistant on: Statistical Inference
     *  Topics: statistical models, point estimator, ANOVA, hypothesis test, and regression
 	
 ---
 ## Employment
-  * Academia Sinica, Institute of Mathematics, Taiwan, 2008 - 2010: Research Assistant
+  * Brown university, Jun 2017-Present: Posdoc
+  * Academia Sinica, Institute of Mathematics, Taiwan, Nov 2008 - Aug 2010: Research Assistant
 	*  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
 	*  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
-  * Military Service, Taiwan, 2007 - 2008: Coastal Patrol Corporal
+  * Military Service, Taiwan, Jan 2007 - Jan 2008: Coastal Patrol Corporal
   
 --- 
 ## Honors and Awards
