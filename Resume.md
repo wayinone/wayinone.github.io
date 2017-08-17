@@ -64,22 +64,30 @@ permalink: /Resume
 	
 ---
 ## Projects ##
-  * Kaggle Competition: Digit Recognizer
+  * [Kaggle Competition: Digit Recognizer](/CNN)
 	* Applying convolution neural network to build a digit classifier from MNIST data (37,800 training data)
 	* Achieving 99.21% correction rate on 28,000 test data
+
+  * [Kaggle Competition: New York City Taxi Trip Duration](/NYtaxi)
+	* Using Gradient Boost model to predict a taxi trip duration (in second) in New York city from 1.5 million data, where 8 features, includes GPS information, pickup date, and time, were provided
+	*  Acquiring additional 16 features, like travel distance, weather, and holiday information
+	*  Achieving RMSLE score 0.379 (top 6\% of 600 teams)
+
+	
+  * [Text Message Spam Detector](/SMS)
+	* Using NLP model to analyze 5,572 text message (13\% of are labeled as spam)
+	* Comparing multiple machine learning tools: SVM, Naive Bayes, Random Forest, and Gradient Boost, etc.
+	* Achieved accuracy 98.9\% (precision and recall are 95.7\%) on 1,115 test set
+	(code also available at \href{https://www.kaggle.com/onlyshadow/spam-or-ham-7-machine-learning-tools-walk-through}{Kaggle})
 
   * [Text Generator with Recurrent Neural Network](/LSTM)
 	* Using LSTM on Python (Keras on Tensorflow backend) to build a predictive context model
 	* Generating Shakespeare-like article by analyzing Shakespeare's work
+  
 	
   * Improving 3D Stereo Data with Markov Random Field
 	*  Reduce the mismatching problem when reconstructing 3D images from stereo data
 	*  Applying conjugate gradient to speed up the procedure and obtaining a smooth reconstruction
-	
-  * Parts-Based Object Detector
-	* Image recognition with with a hierarchical generative parts model
-	* 95% accuracy with 10% type I error when data is extremely corrupted (by adding Gaussian noise with variance equals the maximum pixel intensity).
-	* Implemented with a C++ mex file in Matlab	
 	
   * 3D Reconstruction with Structured Light
 	* Reconstructing a 3D image with a camera and structured light from a projector
