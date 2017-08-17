@@ -1,4 +1,8 @@
-
+---
+layout: default2
+title: LSTM
+permalink: /LSTM
+---
 # Words Generator with LSTM on Keras
 
 ##### Wei-Ying Wang 6/13/2017
