@@ -1,10 +1,3 @@
----
-layout: default2
-title: LSTM
-permalink: /LSTM
----
-
-
 
 # Words Generator with LSTM on Keras
 
@@ -26,7 +19,7 @@ Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 08:06:12) [MSC v.1900 64 bit (AM
 keras version 1.2.2
 ```
 
-## Shakespeare vs the Counterfeit
+# 1. Shakespeare vs the Counterfeit
 Let's take a peek at the masterpiece:
 
 >Second Citizen:<br />
@@ -107,7 +100,7 @@ import AuxFcn
     Using TensorFlow backend.
     
 
-## Data input
+# 2. Data input
 
 A small part of the code in this section is using Karpathy's code in [here](https://gist.github.com/karpathy/d4dee566867f8291f086). 
 
@@ -155,7 +148,7 @@ pickle.dump(ix2char,open('dic_used_LSTM_16_128.pkl','wb'))
 # You will want to save it, since everytime you will get different ix2char dictionary, since you have use set() before it.
 ```
 
-# First model: Using 16 words to predict the next word
+# 3. The model: Using 16 words to predict the next word
 
 Our model will only make prediction based on the previous `T` characters. This is done by setting the time_step, $T$ by `T=16.`
 
@@ -193,7 +186,7 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
     ief enemy to th
     
 
-## Constructing an LSTM layer 
+## 3.1 Constructing an LSTM layer 
 
  1. In the following, we will assign the first layer to be LSTM
     ```
@@ -202,10 +195,10 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
     ```
     This means: when unroll this recurrent layer, we will see:
 
-      * 6 LSTM cells, that output T hidden units $(h_1,...,h_T)$, where each unit is a vector of size $m$. 
-        - Note that there are also T state units $(s_1,...,s_T)$, that only used between the LSTM cells in the same layer.
+      * 16 LSTM cells (Since `T=16`), where the cell output T hidden units $(h_1,...,h_T)$, where each unit is a vector of size `m`. 
+        - Note that there are also T state units $(c_1,...,c_T)$, that only used between the LSTM cells in the same layer.
           - the state units (AKA recurrent units) controls long term information, which will be controlled by forget gate. 
-      * The input layer are T units  $(x_1,...,x_T)$, each unit is a vector of size `d`
+      * The input layer are T units  $(x_1,...,x_T)$, each unit is a vector of size `d`, the number of distinct characters.
       * Note that every LSTM cell **shares** the same parameter.
 
  2. The next layer is the output layer, using `softmax`. Note that the softmax only applies on the information of $h_T$, the last activation of $h$. 
@@ -222,27 +215,47 @@ print(AuxFcn.translate(y_tmp[200:215,:],ix2char))
 
 ### Parameters in LSTM layer
 
-I will give a little explaination on the numbers of parameter of a LSTM layer.
+I will give a little explaination on the numbers of parameter of a LSTM layer. For more detail information, you can visit [here](http://colah.github.io/posts/2015-08-Understanding-LSTMs/).
 
-The calculation of $h_t$, $t=1,2,...,T$, requires:$$U\cdot h_{t-1}+W\cdot x_t+b,$$ where       
+The $t^{th}$ LSTM cell will produce two ouputs: the **output state** $h_t$, and the **cell state** $c_t$, both of them are `(m,)` vectors.
+
+The calculation of the outputs of an LSTM cell, $h_t$, $t=1,2,...,T$, requires the computation of current input units after 4 gates: **forget gate, cell state gate, output gate, input gate**
+$$U\cdot h_{t-1}+W\cdot x_t+b.$$ 
+In particular:
+$$f_t         = \sigma(U_f\cdot h_{t-1}+W_f \cdot x_{t-1}+b_f)$$
+$$\bar{c}_t   = tanh(U_c\cdot h_{t-1}+W_c \cdot x_{t-1}+b_c)$$
+$$o_t         = \sigma(U_o\cdot h_{t-1}+W_o \cdot x_{t-1}+b_o)$$
+$$i_t         = \sigma(U_i\cdot h_{t-1}+W_i \cdot x_{t-1}+b_i)$$
+  
+where $\sigma$ is the activation function, and       
  
  - $U = (U_f,U_c,U_o,U_i)$,
  - $W = (W_f,W_c,W_o,W_i)$, and
  - $b = (b_f,b_c,b_o,b_i)$, where
-   - $f$: forget gate
-   - $c$: internal state 
-   - $o$: output gate
-   - $i$: input 
+   - $f$: index about **forget gate**
+   - $\bar{c}$: index about **cell state gate**
+   - $o$: index about **output gate**
+   - $i$: index about **input gate**
      
-Note that each $U$ is (m,m), each $W$ is (m,d), each $h$ is (m,). Thus, in total we have
+Note that each $U_f,U_c,U_o,U_i$ is `(m,m)`, each $W$ is `(m,d)`, each $b$ is `(m,)`. Thus, in total we have
 $$4\cdot(m^2+m\cdot d+m)$$ parameters.
+
+The calculation of the output state $h_t$, and the cell state $c_t$ is as follows:
+$$ c_t = f_t\cdot c_{t-1} +i_t \cdot \bar{c}_t$$
+$$ h_t = o_t\cdot tanh(c_t)$$
+
+As you can see,
+
+ 1. Each gate is only applied on the current input.
+ 2. The cell state unit is controlled by **forget gate, previous cell state unit** and **input gate**.
+ 3. The output unit is controlled by **output gate** and **cell state gate**.
 
 ### Forward Propagation
 
-The forward propagation will be: set $h_0=\bf 0$ and $s_0=\bf 0$, then
+The forward propagation will be: set $h_0=\bf 0$ and $c_0=\bf 0$, then
   
-  1. input $x_1$, then calculate $h_1$ and $s_1$, then
-  2. input $x_2$, then calculate $h_2$ and $s_2$, and so on
+  1. input $x_1$, then calculate $h_1$ and $c_1$, then
+  2. input $x_2$, then calculate $h_2$ and $c_2$, and so on
   3. Unitl obatain $h_T$
   
 
@@ -276,7 +289,7 @@ model.summary()
 
 Note that the `Output Shape` are `(None, 128)` and `(None, 36)`, this means the model can receive dynamic batch size, i.e. if you input a batch of samples of size `k` (for calculate of SGD), the first layer will generate output of size `(k,128)`. Take a look at Appendix 1, where I explain `batch_input_shape`, `input_shape`, `batch_shape`.
 
-## Training the model
+## 3.2 Training the model
 
  * Note that we have to set `batch_size` parameter when training. This is the size of samples used when calculate the stochastic gradient descent (SGD)
 
@@ -322,7 +335,7 @@ history = model.fit(x_tmp, y_tmp,
     ```
  * The training procedure will not give a good accuration, I got accuration about 0.63. But it is expected, if you got 90% correction rate, then Shakespeare is just a word machine without any inspiration... i.e. The model learned is Shakespear's grammar, structures, and words. Far from the idea or spirit of Shakespear.
 
-## Fun time: Generate the txt
+# 4. Fun time: Generate the txt
 To have fun fast, you can load the model I generated, which has ran about 60 epoch (each epoch took about 140s), don't forget to load the dictionary `ix2char` as well.
 
 
@@ -467,7 +480,3 @@ model.summary()
     x_1    x_2    ...    x_T
     ```
  * It is also clear that if you want to stack the LSTM models, you will have to on `return_sequences`.
-
-
-
-
