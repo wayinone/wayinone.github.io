@@ -3,7 +3,6 @@ layout: default2
 title: NYtaxi
 permalink: /NYtaxi
 ---
-
 # A Practical Guide to NY Taxi Data (0.379)
 ### 2017/8/13 Weiying Wang
 
@@ -64,13 +63,10 @@ from datetime import date
 import xgboost as xgb
 from sklearn.cluster import MiniBatchKMeans
 import seaborn as sns # plot beautiful charts
+import warnings
 sns.set()
-#warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore')
 ```
-
-    C:\WinPython-64bit-3.6.0.1Qt5\python-3.6.0.amd64\lib\site-packages\sklearn\cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-      "This module will be removed in 0.20.", DeprecationWarning)
-    
 
 
 ```python
@@ -362,7 +358,8 @@ time_test = time_test.assign(pickup_time = test.hr+test.minute/60)
 Use the following code to save the features:
 ```
 time_data.to_csv('../features/time_data.csv',index=False)
-time_test.to_csv('../features/time_test.csv',index=False) ```
+time_test.to_csv('../features/time_test.csv',index=False)
+```
 
 
 ```python
@@ -838,7 +835,8 @@ Use the following code to save the features:
 data.to_csv('../features/osrm_data.csv',index=False,
             columns = ['total_distance','total_travel_time','number_of_steps','right_steps','left_steps'])
 test.to_csv('../features/osrm_test.csv',index=False,
-            columns = ['total_distance','total_travel_time','number_of_steps','right_steps','left_steps'])```
+            columns = ['total_distance','total_travel_time','number_of_steps','right_steps','left_steps'])
+```
 
 ### Appendix: Google Map API<a id='Google Map API'></a>
 
@@ -874,6 +872,7 @@ The distance functions are from [beluga](https://www.kaggle.com/gaborfodor/from-
  1. Haversine distance: the direct distance of two GPS location, taking into account that the earth is round.
  2. Manhattan distance: the usual L1 distance, here the haversine distance is used to calculate each coordinate of distance.
  3. Bearing: The direction of the trip. Using radian as unit. (I must admit that I am not fully understand the formula. I have starring at it for a long time but can't come up anything. If anyone can help explain that will do me a big favor.)
+ 
 
 
 ```python
@@ -916,7 +915,8 @@ Other_dist_data,Other_dist_test = List_dist
 Use the following code to save it to your features.
 ```
 Other_dist_data.to_csv('../features/Other_dist_data.csv',index=False)
-Other_dist_test.to_csv('../features/Other_dist_test.csv',index=False)```
+Other_dist_test.to_csv('../features/Other_dist_test.csv',index=False)
+```
 
 ## 1.3 Location Features: K-means Clustering<a id='Location Features: K-means Clustering'></a>
 
@@ -954,7 +954,8 @@ kmean10_test = test[['pickup_dropoff_loc']]
 Use the following code to save the data.
 ```
 data.to_csv('../features/kmean10_data.csv',index=False,columns = ['pickup_dropoff_loc'])
-test.to_csv('../features/kmean10_test.csv',index=False,columns = ['pickup_dropoff_loc'])```
+test.to_csv('../features/kmean10_test.csv',index=False,columns = ['pickup_dropoff_loc'])
+```
 
 <a id='KmeansPlot'></a> Let's take a look at our kmeans clusters. Remember that each cluster is represented by a 4d point (longitude/latitude of pickup location and logitude/latitude of dropoff location). I will drow first 500 points of each clusters, and each plot have two locations, pickup and dropoff.
 
@@ -1439,18 +1440,10 @@ Out = pd.DataFrame()
 Out = Out.assign(outliers=outliers)
 ```
 
-
-```python
-'''data = data.assign(outliers=outliers)
-data.to_csv('../features/outliers.csv',index=False,columns=['outliers'])'''
 ```
-
-
-
-
-    "data = data.assign(outliers=outliers)\ndata.to_csv('../features/outliers.csv',index=False,columns=['outliers'])"
-
-
+data = data.assign(outliers=outliers)
+data.to_csv('../features/outliers.csv',index=False,columns=['outliers'])
+```
 
 ## 3. Analysis of Features<a id='Analysis of Features'></a>
 
