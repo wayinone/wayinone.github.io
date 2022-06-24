@@ -7,29 +7,64 @@ permalink: /Resume
 # CV of Wei-Ying Wang Ph.D.
 ---
 
-* [PDF version](/assets/WeiyingWang_CV.pdf)
+* [PDF version](/assets/wayne_cv_2022.pdf)
 
 
 ---
 ## Summary ##
-* Seeking a data scientist position (willing to relocate)
-* Applied Mathematics Ph.D. with 10+ years experience in programming
-* Specialized in data classification and statistical image analysis
-* Analyzing large data to develop an image compression algorithm that achieves the best compression rate
+* Seeking a data scientist / Machine Learning Engineer position in which I would contribute to the success of
+a business
+* Data Schience Tech Lead in Wayfair, specialized in product matching and classification.
+* 5 years of experience of scalable solutions and ML pipeline construction
+* Applied Mathematics Ph.D.
 
 ---
 ## Technical Skills
-* Statistics
-  * Mathematical statistics, regression, Baysian analysis, MCMC, information theory
-* Machine Learning
-  * Classification, decision tree, random forest, deep learning, SVM, graphical model
-* Image analysis
-  * Compression, denoising, 3D reconstruction, pattern recognition		  
-* Programming	
-  * Proficient with: Python(Numpy, Keras, ctypes), Matlab,  Latex
-  * Experienced with: SQL(MySQL), C/C++ (Eclipse), Amazon EC2, Mathematica, R
-* System
-  * Windows, Linux
+* Machine Learning 
+  * Classification, Regression, Deep Learning, NLP (Fasttext, CRF)
+* Programming 
+  * Python(numpy, keras, sklearn, pandas, airflow, kedro, pyspark)
+* Database 
+  * MSSQL, Vertica, Hive, Big Query
+
+## PROFESSIONAL EXPERIENCES AT WAYFAIR LLC.
+* Product Match
+  * Matching 60M Wayfair’s products against 1.1B crawled products in the market
+  * Discovering a business rule by analyzing previous matched data, which find 85% of new matches (8M of match
+pairs) in 30 min, where previous method will take 3 years
+  * Developing a 2-staged machine learning model for white-labeled products that has recall of 95% at 20% false
+positive rate with Spark ML and Scala
+  * Constructing a scalable ML matching pipeline (for white-label products) that can finish entire product matching
+process in 6 days
+  * Matching model is regularly retrained with automated evaluation process to ensure safe deployment
+  * Increasing existing matches by 300% and enabling analysis of market share, selection gap, and pricing
+* Product Classification
+  * Classifying entire catalog (60M Wayfair products and 1.1B crawled competitor products) into 800+ Wayfair
+classes within 2 hours
+  * Achieving 90% accuracy with deep learning model
+  * Automated retraining and evaluating to prevent model degradation
+* Manufacturer Normalization
+  * Normalizing different manufacturer synonyms, e.g. "HP", "Hewlett-Packard", and "Hewlett Packard", are
+alias of the same manufacturer and should be normalized together
+  * Normalizing 129K distinctive manufacturer names into 10K manufacturers, which covers 97% of crawled data
+  * Clean and accurate result impacting many aspects company-wide, fueling analysis like product gaps, MSRP
+estimation, and product matching projects
+* Part Number Extraction
+  * Extracting part numbers from 130M competitor’s product name and description
+  * Utilizing a conditional random field model to achieve 95% precision
+* Optimal Threshold Determination with Bayesian Methods
+  * Estimating match pair suggestions accuracy by the feedback look from human validation, and utilize Bayesian
+statistics to obtain a robust result
+  * Automatically choosing optimal threshold for different classes of products, and improve overall accuracy by
+3%, corresponding to 30K+ hours of labor saving
+* Code Standardization
+  * Modifying an open-source template (kedro) to standardize team’s code to ensure production grade of coding
+from begining, allieviating Data Scientists the burden of common infrastrcuture burden like Jupyter Notebook,
+Spark environment, and code testing.
+  * The first team in Wayfair to advocate the benefit of the code standardization effort with end to end execution
+  * Speed up develop to production velocity by 200% when launching a new ML pipeline, compared to similar
+projects carried by the other team
+  * Enabling the separation of Engineering and data science work, leading to the maximum efficiency of the team
 
 ---
 ## Education
@@ -44,77 +79,14 @@ permalink: /Resume
   * Advisor Ming-Yen Cheng
 * National Taiwan University, Taiwan. Sep 2000 - May 2004
   * B.A. Economics
-  
 
---- 
-## Papers
-  * W.-Y. Wang and S. Geman, [Comparison Based Image Compression.](/CBIC) In progress. 		
-	* A novel lossless image compression scheme with analytic performance guarantees 
-	* Outperforming state-of-the-art algorithms in bit-per-pixel results
-	* Implemented with Amazon cloud (EC2) parallel computing (in C and Python) on 80 million image patches (about 3.6GB)		
-
-  * W.-Y. Wang and S. Geman, [Robust Generalized Clustering.](/RRA)  In progress.
-	*  A highly robust unsupervised data clustering algorithm which fits multiple structures (even when data is 70% corrupted) 
-	* Approximating an NP-hard problem with a modified backward selection procedure
-	* Implemented in C and Python (by ctypes module)
-	
-  * W.-Y. Wang and S. Geman, [Clustering to Shapes.](/PSA)  In progress.
-	* An iterative PCA method for clustering high dimensional data into descriptive manifolds
-	* A novel dimension reduction tool, capable of obtaining complicated structures, like spiral-shaped data, in a short amount of time		
-	
----
-## Projects ##
-  * [Kaggle Competition: Digit Recognizer](/CNN)
-	* Applying convolution neural network to build a digit classifier from MNIST data (37,800 training data)
-	* Achieving 99.21% correction rate on 28,000 test data
-
-  * [Kaggle Competition: New York City Taxi Trip Duration](/NYtaxi)
-	* Using Gradient Boost model to predict a taxi trip duration (in second) in New York city from 1.5 million data, where 8 features, includes GPS information, pickup date, and time, were provided
-	*  Acquiring additional 16 features, like travel distance, weather, and holiday information
-	*  Achieving RMSLE score 0.379 (top 6\% of 600 teams)
-
-	
-  * [Text Message Spam Detector](/SMS)
-	* Using NLP model to analyze 5,572 text message (13\% of are labeled as spam)
-	* Comparing multiple machine learning tools: SVM, Naive Bayes, Random Forest, and Gradient Boost, etc.
-	* Achieved accuracy 98.9\% (precision and recall are 95.7\%) on 1,115 test set
-	(code also available at \href{https://www.kaggle.com/onlyshadow/spam-or-ham-7-machine-learning-tools-walk-through}{Kaggle})
-
-  * [Text Generator with Recurrent Neural Network](/LSTM)
-	* Using LSTM on Python (Keras on Tensorflow backend) to build a predictive context model
-	* Generating Shakespeare-like article by analyzing Shakespeare's work
-  
-	
-  * Improving 3D Stereo Data with Markov Random Field
-	*  Reduce the mismatching problem when reconstructing 3D images from stereo data
-	*  Applying conjugate gradient to speed up the procedure and obtaining a smooth reconstruction
-	
-  * 3D Reconstruction with Structured Light
-	* Reconstructing a 3D image with a camera and structured light from a projector
-	* Obtaining a high resolution 3D image in a split second
-		
----	
-## Academic Experience
-  * Brown university, Sep 2016 - Dec 2016: Teaching Assistant on: Probabilities in Quantum Mechanics
-    *  Topics: tensor representation, observable, entanglement, and quantum teleportation 
-
-  * Brown university, Sep 2011 - May 2012: Teaching Assistant on: Statistical Inference
-    *  Topics: statistical models, point estimator, ANOVA, hypothesis test, and regression
-	
 ---
 ## Employment
+  * Wayfair, Massachusetts, Sep 2017 - Now: Data Science Tech Lead. Leading a team of 2 data scientist and 1 engineer, creating production pipelines related to product matching
   * Brown university, Jun 2017-Present: Posdoc
   * Academia Sinica, Institute of Mathematics, Taiwan, Nov 2008 - Aug 2010: Research Assistant
 	*  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
 	*  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
   * Military Service, Taiwan, Jan 2007 - Jan 2008: Coastal Patrol Corporal
-  
---- 
-## Honors and Awards
-  * Sigma Xi National Nomination, Brown University, 2016-2017
-  * University Fellowship, Brown University, 2010-2017
-  * Presidential Award, National Taiwan University, Taiwan, 2002
-  * Yuan-Chou Hu's Scholarship, Ministry of the Interior, Taiwan, 2002
-
-----
+---  
 ****
