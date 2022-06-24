@@ -3,7 +3,7 @@
 I am using Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/).
 
 ## Using Github
- - I am new to Github. What I do to create this site is:
+ - I am still new to create a website. What I do to create this site is:
    1. create a repository in Github names "YOUR-GITHUB-Username.github.io"
    2. Pick jekyll theme template at https://jekyllthemes.io/
    3. Put the theme you choosed in your newly created repository.
