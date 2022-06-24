@@ -82,8 +82,9 @@ projects carried by the other team
 
 ---
 ## Employment
-* Wayfair, Massachusetts, Sep 2017 - Now: Data Science Tech Lead. Leading a team of 2 data scientist and 1 engineer, creating production pipelines related to product matching
-* Brown university, Jun 2017-Present: Posdoc
+* Wayfair, Massachusetts, Sep 2017 - Now: Data Science Tech Lead.
+  * Leading a team of 2 data scientist and 1 engineer, creating production pipelines related to product matching
+* Brown university, Jun 2017-Sep 2017: Posdoc
 * Academia Sinica, Institute of Mathematics, Taiwan, Nov 2008 - Aug 2010: Research Assistant
 * Military Service, Taiwan, Jan 2007 - Jan 2008: Coastal Patrol Corporal
 
