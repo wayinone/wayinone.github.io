@@ -82,11 +82,10 @@ projects carried by the other team
 
 ---
 ## Employment
-  * Wayfair, Massachusetts, Sep 2017 - Now: Data Science Tech Lead. Leading a team of 2 data scientist and 1 engineer, creating production pipelines related to product matching
-  * Brown university, Jun 2017-Present: Posdoc
-  * Academia Sinica, Institute of Mathematics, Taiwan, Nov 2008 - Aug 2010: Research Assistant
-	*  Utilizing PCA to build an image prior for denoising. Implemented with convolution operations on CUDA (speed up by 300%) in Matlab, made it possible to estimate parameters
-	*  Instructing 20+ lectures on topics of signal analysis: wavelets and multi resolution
-  * Military Service, Taiwan, Jan 2007 - Jan 2008: Coastal Patrol Corporal
+* Wayfair, Massachusetts, Sep 2017 - Now: Data Science Tech Lead. Leading a team of 2 data scientist and 1 engineer, creating production pipelines related to product matching
+* Brown university, Jun 2017-Present: Posdoc
+* Academia Sinica, Institute of Mathematics, Taiwan, Nov 2008 - Aug 2010: Research Assistant
+* Military Service, Taiwan, Jan 2007 - Jan 2008: Coastal Patrol Corporal
+
 ---  
 ****
