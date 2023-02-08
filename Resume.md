@@ -7,14 +7,14 @@ permalink: /Resume
 # CV of Wei-Ying Wang Ph.D.
 ---
 
-* [PDF version](/assets/wayne_cv_2023_v2.pdf)
+* [PDF version](/assets/wayne_cv_2023_v3.pdf)
 
 
 ---
 ## Summary ##
 * Seeking a data scientist / Machine Learning Engineer position in which I would contribute to the success of
 a business
-* Data Schience Tech Lead in Wayfair, specialized in product matching and classification.
+* Data Science Tech Lead in Wayfair, specialized in product matching and classification from images and text
 * 5 years of experience of scalable solutions and ML pipeline construction
 * Applied Mathematics Ph.D.
 
